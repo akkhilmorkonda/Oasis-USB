@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oasis Patient Health Key</title>
+  <!-- Fonts: loads when online, falls back to system fonts when offline (e.g. USB) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="header__logo">Oasis Patient Health Key</h1>
+    <div class="header__patient" id="header-patient">
+      <span class="header__name" id="patient-name">—</span>
+      <span class="header__id" id="patient-id">ID: —</span>
+    </div>
+  </header>
+
+  <main class="main">
+    <div id="loading" class="loading">
+      <p>Loading patient record…</p>
+    </div>
+
+    <div id="error" class="error" hidden>
+      <h2>No patient record found.</h2>
+      <p>This USB does not contain a valid FHIR Bundle with patient data.</p>
+    </div>
+
+    <div id="viewer" class="viewer" hidden>
+      <section class="section" id="section-patient">
+        <h2 class="section__title">Patient Summary</h2>
+        <div class="card" id="patient-summary"></div>
+      </section>
+
+      <section class="section" id="section-visits">
+        <h2 class="section__title">Visits</h2>
+        <div id="visits-list"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="fhir/bundle.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

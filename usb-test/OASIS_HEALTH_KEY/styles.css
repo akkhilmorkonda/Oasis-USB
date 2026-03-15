@@ -1,0 +1,269 @@
+/* Oasis Patient Health Key — Offline Viewer */
+:root {
+  --color-bg: #f8f9fa;
+  --color-surface: #ffffff;
+  --color-border: #e2e8f0;
+  --color-text: #1e293b;
+  --color-text-muted: #64748b;
+  --color-accent: #0d9488;
+  --color-accent-hover: #0f766e;
+  --color-error: #b91c1c;
+  --font-display: 'Libre Baskerville', Georgia, serif;
+  --font-body: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-bg);
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  color: white;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.header__logo {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.header__patient {
+  text-align: right;
+}
+
+.header__name {
+  display: block;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.header__id {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* Main */
+.main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--color-text-muted);
+}
+
+.loading p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* Error */
+.error {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+}
+
+.error h2 {
+  color: var(--color-error);
+  margin: 0 0 0.5rem;
+}
+
+.error p {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+/* Viewer sections */
+.viewer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section__title {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* Cards */
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow);
+}
+
+.card-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.card-grid .card {
+  padding: 1rem 1.25rem;
+}
+
+.card__row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.card__row:last-child {
+  margin-bottom: 0;
+}
+
+.card__label {
+  font-weight: 600;
+  color: var(--color-text-muted);
+  min-width: 7rem;
+}
+
+.card__value {
+  color: var(--color-text);
+}
+
+/* Observations grid (vitals) */
+.observations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.observation-card {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+}
+
+.observation-card__label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.observation-card__value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.observation-card__unit {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.observation-card__date {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: 0.25rem;
+}
+
+/* Media grid */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.media-card {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.media-card__preview {
+  background: #e2e8f0;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+}
+
+.media-card__preview img {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+.media-card__preview video {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+.media-card__preview audio {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.media-card__body {
+  padding: 1rem;
+}
+
+.media-card__title {
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+
+.media-card__meta {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.media-card__missing {
+  padding: 2rem;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* Condition badges */
+.condition-badge {
+  display: inline-block;
+  background: #f1f5f9;
+  color: var(--color-text);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  margin: 0.25rem 0.25rem 0 0;
+}

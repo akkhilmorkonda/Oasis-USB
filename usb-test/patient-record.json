@@ -1,0 +1,90 @@
+{
+  "patient": {
+    "id": 4,
+    "patientNumber": "P-00004",
+    "firstName": "Wanjiru",
+    "lastName": "Kamau",
+    "dateOfBirth": "2001-01-10",
+    "sex": "F",
+    "phone": null,
+    "address": "Nyeri County",
+    "medicalHistory": null,
+    "createdAt": "2026-03-14T18:53:52.897Z",
+    "updatedAt": "2026-03-14T18:53:52.897Z",
+    "visits": [
+      {
+        "id": 5,
+        "staffName": "Dr. Varun Patel",
+        "staffRole": "doctor",
+        "bloodPressure": "120/80",
+        "heartRate": 72,
+        "temperature": "36.8",
+        "chiefComplaint": "Chest pain.",
+        "notes": "None.",
+        "diagnosis": "Unknown.",
+        "treatmentPlan": "Physical therapy.",
+        "visitedAt": "2026-03-14T21:35:44.665Z",
+        "createdAt": "2026-03-14T21:35:44.678Z"
+      },
+      {
+        "id": 6,
+        "staffName": "Dr. Varun Patel",
+        "staffRole": "doctor",
+        "bloodPressure": "120/80",
+        "heartRate": 72,
+        "temperature": "36.8",
+        "chiefComplaint": "Chest pain.",
+        "notes": "None.",
+        "diagnosis": "Unknown.",
+        "treatmentPlan": "Physical therapy.",
+        "visitedAt": "2026-03-14T21:36:07.327Z",
+        "createdAt": "2026-03-14T21:36:07.338Z"
+      },
+      {
+        "id": 7,
+        "staffName": "Dr. Varun Patel",
+        "staffRole": "doctor",
+        "bloodPressure": "120/80",
+        "heartRate": 72,
+        "temperature": "33.8",
+        "chiefComplaint": "Test",
+        "notes": "Test",
+        "diagnosis": "Test",
+        "treatmentPlan": "Test",
+        "visitedAt": "2026-03-14T21:39:19.295Z",
+        "createdAt": "2026-03-14T21:39:19.306Z"
+      },
+      {
+        "id": 8,
+        "staffName": "Dr. Varun Patel",
+        "staffRole": "doctor",
+        "bloodPressure": "120/80",
+        "heartRate": 72,
+        "temperature": "33",
+        "chiefComplaint": "Test",
+        "notes": "Test",
+        "diagnosis": "Test",
+        "treatmentPlan": "Test",
+        "visitedAt": "2026-03-14T21:45:05.173Z",
+        "createdAt": "2026-03-14T21:45:05.184Z"
+      }
+    ],
+    "media": [
+      {
+        "id": 1,
+        "visitId": 8,
+        "mediaType": "photo",
+        "originalFilename": "photo.jpg",
+        "uploadedAt": "2026-03-14T21:45:08.591Z"
+      },
+      {
+        "id": 2,
+        "visitId": 8,
+        "mediaType": "photo",
+        "originalFilename": "test.jpg",
+        "uploadedAt": "2026-03-14T21:46:59.259Z"
+      }
+    ]
+  },
+  "exportedAt": "2026-03-14T21:53:42.115Z"
+}

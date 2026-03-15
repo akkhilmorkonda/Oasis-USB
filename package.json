@@ -1,0 +1,27 @@
+{
+  "name": "oasis-health-key-export",
+  "version": "1.0.0",
+  "description": "Oasis Patient Health Key — Export patient records to FHIR USB package",
+  "main": "export/export-to-usb.js",
+  "bin": "export/export-to-usb.js",
+  "pkg": {
+    "scripts": "export/*.js",
+    "assets": [
+      "OASIS_HEALTH_KEY/index.html",
+      "OASIS_HEALTH_KEY/styles.css",
+      "OASIS_HEALTH_KEY/app.js",
+      "OASIS_HEALTH_KEY/README.txt"
+    ],
+    "targets": [
+      "node18-win-x64"
+    ],
+    "outputPath": "dist"
+  },
+  "scripts": {
+    "build": "pkg . -o dist/oasis-health-key-export.exe",
+    "export": "node export/export-to-usb.js"
+  },
+  "devDependencies": {
+    "pkg": "^5.8.1"
+  }
+}

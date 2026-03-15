@@ -1,0 +1,132 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-001",
+        "name": [
+          {
+            "family": "Smith",
+            "given": [
+              "Jane",
+              "Marie"
+            ],
+            "use": "official"
+          }
+        ],
+        "birthDate": "1985-03-22",
+        "gender": "female",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(555) 123-4567",
+            "use": "home"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "enc-001",
+        "status": "finished",
+        "type": [
+          {
+            "text": "Annual checkup"
+          }
+        ],
+        "period": {
+          "start": "2024-02-15T09:00:00Z",
+          "end": "2024-02-15T09:45:00Z"
+        },
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "participant": [
+          {
+            "individual": {
+              "display": "Dr. Sarah Chen"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-bp",
+        "status": "final",
+        "code": {
+          "text": "Blood pressure"
+        },
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "effectiveDateTime": "2024-02-15T09:15:00Z",
+        "valueQuantity": {
+          "value": 118,
+          "unit": "mmHg"
+        },
+        "component": [
+          {
+            "code": {
+              "text": "Systolic"
+            },
+            "valueQuantity": {
+              "value": 118,
+              "unit": "mmHg"
+            }
+          },
+          {
+            "code": {
+              "text": "Diastolic"
+            },
+            "valueQuantity": {
+              "value": 76,
+              "unit": "mmHg"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-001",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "display": "Active"
+            }
+          ]
+        },
+        "code": {
+          "text": "Hypertension"
+        },
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "onsetDateTime": "2020-06-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Media",
+        "status": "completed",
+        "type": {
+          "text": "document"
+        },
+        "content": {
+          "contentType": "image/png",
+          "url": "media/image_001.png",
+          "title": "Wound photo"
+        },
+        "subject": {
+          "reference": "Patient/patient-001"
+        }
+      }
+    }
+  ]
+}
